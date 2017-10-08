@@ -19,42 +19,30 @@ def print_indices(items):
 
 def words_in_common(words1, words2):
     """Find words in common.
-    Given 2 lists of words, return the words that are in common
-    between the two, sorted alphabetically.
-    **NOTE**: for this problem, you're welcome to use any of the
-    Python data structures you've been introduced to (not just
-    lists).
-    For example::
-        >>> words_in_common(
-        ...    ["Python", "Ruby", "R", "C++", "Haskell"],
-        ...    ["Lizard", "Turtle", "Python"]
-        ...    )
-        ['Python']
-
-    The returned list should not have any duplicates::
-        >>> words_in_common(
-        ...    ["cheese", "bagel", "cake", "cheese"],
-        ...    ["hummus", "cheese", "beets", "kale", "bagel", "cake"]
-        ... )
-        ['bagel', 'cake', 'cheese']
-
-    If there are no words in common, return an empty list::
-        >>> words_in_common(
-        ... ["lamb", "chili", "cheese"],
-        ... ["cake", "ice cream"]
-        ... )
-        []
-
-    If a duplicate exists in the original lists, the result will
-    contain the value only once::
-        >>> words_in_common(
-        ...    ["Python", "Ruby", "R", "C++", "Haskell"],
-        ...    ["Lizard", "Turtle", "Python", "Python"]
-        ...    )
-        ['Python']
+    
+    Given 2 lists of words, words1 and words2, return the words that are in
+    common between the two, sorted alphabetically.
     """
 
-    return ['the wrong thing']
+    #This is how I did it the first time
+        # common_set = set([])
+        # words1_set = set(words1)
+        # words2_set = set(words2)
+
+        # for item in words1_set:
+        #     if item in words2_set:
+        #         common_set.add(item)
+        # return list(common_set)
+
+    # This is how I ultimately chose to do this.
+    # Convert my lists into sets so that I can do set-math.
+    words1_set = set(words1)
+    words2_set = set(words2)
+
+    # Create the intersection set of the two sets and turn this into a list.
+    # Then sort the list alphabetically out of place.
+    in_common = list(words1_set & words2_set)
+    return sorted(in_common)
 
 
 def every_other_item(items):
