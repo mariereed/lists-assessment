@@ -6,26 +6,15 @@ you run this file.
 
 
 def print_indices(items):
-    """Print each item in the list, followed by its index. Do this without
-    using a "counting variable" --- that is, don't do something like this::
-        count = 0
-        for item in list:
-            print count
-            count = count + 1
-    Output should look like this::
-        >>> print_indices(["Toyota", "Jeep", "Volvo"])
-        Toyota 0
-        Jeep 1
-        Volvo 2
-        >>> print_indices(["Toyota", "Jeep", "Toyota", "Volvo"])
-        Toyota 0
-        Jeep 1
-        Toyota 2
-        Volvo 3
+    """Print each item in the list, followed by its index.
 
+    Takes one argument, a list, and returns the item and it's index.
     """
 
-    print("Nothing at all")
+    # Use range() to iterate over a list of indices, for each index
+    # call its corresponding value within items.
+    for index in range(len(items)):
+        print items[index], index
 
 
 def words_in_common(words1, words2):
